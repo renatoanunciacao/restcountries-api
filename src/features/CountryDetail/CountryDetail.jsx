@@ -1,10 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { CountryDetailWrap } from "./CountryDetailStyles";
+import { CountryDetailWrap } from "./CountryDetailStyle";
 import { ButtonRound } from "../../assets/styles/Lib";
 
 const CountryDetail = props => {
-  console.log(props);
   const {
     history,
     country: { name, flag, population }

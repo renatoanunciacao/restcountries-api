@@ -1,10 +1,13 @@
-import React from 'react';
-import Header from '../../features/Header/Header';
-import CountryDetail from '../../features/CountryDetail/CountryDetail';
+import React from "react";
+import Header from "../../features/Header/Header";
+import CountryDetail from "../../features/CountryDetail/CountryDetail";
+import { Container } from "../../assets/styles/Lib";
+
+// redux
+import { connect } from "react-redux";
 
 const Detail = props => {
   const { countries } = props;
-
   return (
     <>
       <Header />
@@ -16,11 +19,11 @@ const Detail = props => {
             )}
           />
         )}
-        {countries.length > 0 && <div>Carregando</div>}
+        {countries.length === 0 && <div>Carregando...</div>}
       </Container>
     </>
   );
-}
+};
 const mapStateToProps = store => ({
   countries: store.setCountriesReducer.countries
 });
