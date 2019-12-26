@@ -28,7 +28,7 @@ const App = props => {
 
     countryService.getAllCountriesFromApi().then(res => {
       console.log(res.data);
-      //loadCountries(res.data);
+      loadCountries(res.data);
     });
 
     return () => {

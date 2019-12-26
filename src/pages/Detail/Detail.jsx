@@ -1,5 +1,27 @@
 import React from 'react';
+import Header from '../../features/Header/Header';
+import CountryDetail from '../../features/CountryDetail/CountryDetail';
 
-const Detail = () => <div>Detail</div>
+const Detail = props => {
+  const { countries } = props;
 
-export default Detail;
+  return (
+    <>
+      <Header />
+      <Container>
+        {countries.length > 0 && (
+          <CountryDetail
+            country={countries.find(
+              country => country.numericCode === props.match.params.numericcode
+            )}
+          />
+        )}
+        {countries.length > 0 && <div>Carregando</div>}
+      </Container>
+    </>
+  );
+}
+const mapStateToProps = store => ({
+  countries: store.setCountriesReducer.countries
+});
+export default connect(mapStateToProps)(Detail);
