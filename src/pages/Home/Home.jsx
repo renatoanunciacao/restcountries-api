@@ -1,5 +1,18 @@
 import React from 'react';
+import Header from "../../features/Header/Header";
 
-const Home = () => <div>Home</div>
+//import { connect } from "react-redux";
 
+const Home = props => {
+  //const { countries } = props;
+  return (
+    <>
+      <Header />
+
+    </>
+  );
+};
+//const mapStateToProps = store => ({
+//countries: store.setCountriesReducer.countries
+//});
 export default Home;
